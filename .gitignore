@@ -1,0 +1,32 @@
+# Secrets
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Cache dirs
+.tribe_cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Audio / session artifacts
+*.mp3
+*.wav
+*.tsv
+sessions/
+
+# IDE
+.vscode/
+.idea/
