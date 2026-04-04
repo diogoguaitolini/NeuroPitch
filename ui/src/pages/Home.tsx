@@ -94,6 +94,7 @@ export default function Home() {
   const demoRef   = useRef<HTMLElement>(null)
   const ideaRef   = useRef<HTMLElement>(null)
   const howRef    = useRef<HTMLElement>(null)
+  const techRef   = useRef<HTMLElement>(null)
   const heroScores = useHeroScores()
   const [activeTech, setActiveTech] = useState(0)
 
@@ -127,7 +128,7 @@ export default function Home() {
       >
         <NavPill label="HOME"         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
         <NavPill label="HOW IT WORKS" onClick={() => scrollTo(howRef)} className="hidden sm:block" />
-        <NavPill label="TECH"         onClick={() => scrollTo(demoRef)} />
+        <NavPill label="TECH"         onClick={() => scrollTo(techRef)} />
         <div className="hidden sm:block flex-1" />
         <NavPill label="DEMO ↗"       onClick={() => scrollTo(demoRef)} filled />
       </nav>
@@ -163,7 +164,7 @@ export default function Home() {
             className="absolute left-1/2 z-20 pointer-events-auto"
             style={{
               transform: 'translateX(-50%)',
-              top: 'clamp(-140px, -18vw, -60px)',
+              top: 'clamp(-160px, -26vw, -60px)',
               width: 'clamp(280px, 72vw, 720px)',
               height: 'clamp(280px, 72vw, 720px)',
             }}
@@ -351,7 +352,7 @@ export default function Home() {
       </section>
 
       {/* ── TECH ───────────────────────────────────────────────────────── */}
-      <section style={{ background: '#2E2C28' }} className="px-8 sm:px-12 py-24">
+      <section ref={techRef} style={{ background: '#2E2C28' }} className="px-8 sm:px-12 py-24">
         <div className="max-w-screen-xl mx-auto">
 
           {/* Section label */}
