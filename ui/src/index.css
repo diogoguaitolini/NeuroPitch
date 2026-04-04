@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Warm-themed scrollbar */
+.warm-scroll::-webkit-scrollbar { width: 6px; }
+.warm-scroll::-webkit-scrollbar-track { background: transparent; }
+.warm-scroll::-webkit-scrollbar-thumb { background: #C8C3B8; border-radius: 9999px; }
+.warm-scroll::-webkit-scrollbar-thumb:hover { background: #948E81; }

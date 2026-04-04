@@ -59,7 +59,7 @@ def score(
     matrix = np.array([cognitive_profile[t] for t in terms], dtype=np.float64)  # (n_terms, n_trs)
     w = np.array([weights.get(t, 0.0) for t in terms], dtype=np.float64)        # (n_terms,)
 
-    return (w[:, None] * matrix).sum(axis=0)  # (n_trs,)
+    return np.nansum(w[:, None] * matrix, axis=0)  # (n_trs,)
 
 
 def mean_reward(

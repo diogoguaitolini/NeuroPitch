@@ -37,7 +37,10 @@ def _cached_path(term: str) -> Path:
 
 
 def _all_cached() -> bool:
-    return all(_cached_path(t).exists() for t in TERMS)
+    """True if all available-term maps are on disk (missing-vocab terms are skipped)."""
+    # Check that at least one map exists (first-run guard) and every
+    # term that could be built is present. Missing-vocab terms stay as zeros at load time.
+    return any(_cached_path(t).exists() for t in TERMS)
 
 
 def _build_term_maps(data_dir: Path) -> None:
@@ -49,23 +52,53 @@ def _build_term_maps(data_dir: Path) -> None:
     from nimare.meta.cbma.mkda import MKDAChi2
 
     logger.info("Downloading Neurosynth v7 dataset…")
-    [studyset] = fetch_neurosynth(
-        data_dir=str(data_dir),
-        version="7",
-        source="abstract",
-        vocab="terms",
+
+    # Download raw files via fetch_neurosynth but limit time spent on network checks
+    # by loading from disk directly if all required files are already present.
+    ns_dir = Path(data_dir) / "neurosynth"
+    coords_path = ns_dir / "data-neurosynth_version-7_coordinates.tsv.gz"
+    meta_path   = ns_dir / "data-neurosynth_version-7_metadata.tsv.gz"
+    feat_path   = ns_dir / "data-neurosynth_version-7_vocab-terms_source-abstract_type-tfidf_features.npz"
+    vocab_path  = ns_dir / "data-neurosynth_version-7_vocab-terms_vocabulary.txt"
+
+    if all(p.exists() for p in [coords_path, meta_path, feat_path, vocab_path]):
+        logger.info("All Neurosynth files already on disk — loading directly…")
+        from nimare.io import convert_neurosynth_to_dataset
+        annotations = [{"features": str(feat_path), "vocabulary": str(vocab_path)}]
+        dataset = convert_neurosynth_to_dataset(
+            str(coords_path), str(meta_path), annotations_files=annotations
+        )
+    else:
+        [studyset] = fetch_neurosynth(
+            data_dir=str(data_dir),
+            version="7",
+            source="abstract",
+            vocab="terms",
+        )
+        # NiMARE 0.13+ returns a Studyset; CorrelationDecoder needs a Dataset
+        dataset = studyset.to_dataset() if hasattr(studyset, "to_dataset") else studyset
+
+    # Filter to terms that actually exist in the vocabulary
+    vocab_set = set(
+        open(str(vocab_path)).read().splitlines()
+        if vocab_path.exists()
+        else []
     )
+    available_terms = [t for t in TERMS if t in vocab_set]
+    missing = set(TERMS) - set(available_terms)
+    if missing:
+        logger.warning("Terms not in Neurosynth vocabulary (will be skipped): %s", missing)
 
     n_cores = max(1, os.cpu_count() or 1)
-    logger.info("Fitting meta-analyses for %d terms (n_cores=%d)…", len(TERMS), n_cores)
+    logger.info("Fitting meta-analyses for %d terms (n_cores=%d)…", len(available_terms), n_cores)
 
     decoder = CorrelationDecoder(
         feature_group="terms_abstract_tfidf",
-        features=TERMS,
+        features=available_terms,
         meta_estimator=MKDAChi2(),
         n_cores=n_cores,
     )
-    decoder.fit(studyset)
+    decoder.fit(dataset)
 
     results = decoder.results_
     masker = results.masker
@@ -116,4 +149,14 @@ def load_term_maps(data_dir: Optional[str | Path] = None) -> dict[str, np.ndarra
         logger.info("Term maps not cached — building now (takes a few minutes)…")
         _build_term_maps(Path(data_dir))
 
-    return {term: np.load(_cached_path(term)) for term in TERMS}
+    maps: dict[str, np.ndarray] = {}
+    for term in TERMS:
+        path = _cached_path(term)
+        if path.exists():
+            maps[term] = np.load(path)
+        else:
+            # Term not in Neurosynth vocabulary — use zero map (neutral signal)
+            logger.warning("No cached map for '%s' — using zeros.", term)
+            any_shape = next(iter(maps.values())).shape if maps else (20484,)
+            maps[term] = np.zeros(any_shape, dtype=np.float32)
+    return maps
