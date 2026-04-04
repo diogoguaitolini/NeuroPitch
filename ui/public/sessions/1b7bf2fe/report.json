@@ -1,0 +1,566 @@
+{
+  "session_id": "1b7bf2fe",
+  "n_iterations": 2,
+  "reward_history": [
+    -0.9738070272102048,
+    -0.8809979727932001,
+    -0.8298467486688047
+  ],
+  "improvement_pct": 14.78,
+  "transcript_v1": [
+    {
+      "text": "Hi, welcome to our booth. We are Group 106 and our sponsor is Murphy Oil, an upstream oil and gas company from the U.S.",
+      "start": 0.0,
+      "end": 8.5
+    },
+    {
+      "text": "The goal of our capstone is to perform data analysis on their inspection data and understand what are the main drivers of corrosion on their equipment.",
+      "start": 8.5,
+      "end": 16.5
+    },
+    {
+      "text": "Particularly, we are focused on their horizontal separators and all of the piping circuit connected to it.",
+      "start": 16.5,
+      "end": 23.0
+    },
+    {
+      "text": "Horizontal separators are just big pieces of equipment that separates the produce into oil, gas, and water.",
+      "start": 23.0,
+      "end": 29.5
+    },
+    {
+      "text": "And for it to be further refined and distributed.",
+      "start": 30.5,
+      "end": 35.0
+    },
+    {
+      "text": "To find these drivers of corrosion, we used both manual analysis based on literature information available on corrosion mechanisms that we should be expecting to see.",
+      "start": 35.0,
+      "end": 45.0
+    },
+    {
+      "text": "And we also trained machine learning models on the data.",
+      "start": 45.0,
+      "end": 48.0
+    },
+    {
+      "text": "We fed all of the hundreds of parameters into the model when we were making predicts the percentage for loss of the piping.",
+      "start": 48.0,
+      "end": 54.0
+    },
+    {
+      "text": "Our models have an average accuracy of 86% and an average error of 2.6%.",
+      "start": 55.0,
+      "end": 60.5
+    },
+    {
+      "text": "Meaning that, on average, the rear wall loss will be off by about 3%.",
+      "start": 60.5,
+      "end": 66.5
+    },
+    {
+      "text": "This might seem like a lot, but it's actually pretty solid metrics for this type of problem.",
+      "start": 68.5,
+      "end": 76.5
+    },
+    {
+      "text": "The machine learning approach is really good here because it allows us to just pass the data sets into the models.",
+      "start": 76.5,
+      "end": 83.5
+    },
+    {
+      "text": "And the models itself learns the patterns on the data.",
+      "start": 84.0,
+      "end": 88.0
+    },
+    {
+      "text": "And we then just open and explore the models to surface these relationships on the data.",
+      "start": 88.0,
+      "end": 93.0
+    },
+    {
+      "text": "Instead of having to go through all of the thousands of combinations that can be done on the parameters.",
+      "start": 93.0,
+      "end": 101.0
+    },
+    {
+      "text": "After understanding the correlations, the next step on the project was to validate our findings against historical failure events.",
+      "start": 102.0,
+      "end": 109.0
+    },
+    {
+      "text": "Overall, our macro trends were confirmed, such as the regions and the circuits that are more susceptible to corrosion.",
+      "start": 109.5,
+      "end": 115.5
+    },
+    {
+      "text": "But some of the more specific insights couldn't be validated because of a lack of details on the failure events.",
+      "start": 115.5,
+      "end": 122.5
+    },
+    {
+      "text": "At the end, we then concatenated all of those insights into a Power BI dashboard that lets the Murphy oil engineers explore the correlations and trends.",
+      "start": 124.5,
+      "end": 132.5
+    },
+    {
+      "text": "It gets updated automatically when more inspection data is taken.",
+      "start": 132.5,
+      "end": 137.5
+    },
+    {
+      "text": "And it risk ranks the locations of the equipments that need to be inspected more often or receiving special attention.",
+      "start": 138.0,
+      "end": 147.0
+    },
+    {
+      "text": "Based on a formula that we have created that uses the validated parameters that we've seen.",
+      "start": 147.0,
+      "end": 153.0
+    }
+  ],
+  "transcript_vfinal": [
+    {
+      "text": "Hi, welcome to our booth. We are Group 106, and we partnered with Murphy Oil, a U.S.-based upstream oil and gas company.",
+      "start": 0.0,
+      "end": 8.5
+    },
+    {
+      "text": "Our capstone looks at their inspection data to answer one practical question: what is really driving corrosion in their equipment?",
+      "start": 8.5,
+      "end": 16.5
+    },
+    {
+      "text": "We focused on horizontal separators and the piping circuits connected to them.",
+      "start": 16.5,
+      "end": 23.0
+    },
+    {
+      "text": "A horizontal separator is a large vessel that takes the production stream and separates it into oil, gas, and water,",
+      "start": 23.0,
+      "end": 29.5
+    },
+    {
+      "text": "so each stream can move on for further refining and distribution.",
+      "start": 30.5,
+      "end": 35.0
+    },
+    {
+      "text": "To identify the corrosion drivers, we started with manual analysis, using the literature to map the mechanisms we would expect to see.",
+      "start": 35.0,
+      "end": 45.0
+    },
+    {
+      "text": "Then we took that same inspection data and trained machine learning models on it.",
+      "start": 45.0,
+      "end": 48.0
+    },
+    {
+      "text": "We fed the models hundreds of variables and asked a simple question: can they predict percent wall loss in the piping?",
+      "start": 48.0,
+      "end": 54.0
+    },
+    {
+      "text": "Across the models, we reached about 86% accuracy, with an average error of 2.6%.",
+      "start": 55.0,
+      "end": 60.5
+    },
+    {
+      "text": "In practical terms, that means the predicted wall-loss percentage is usually within about 3% of the actual value.",
+      "start": 60.5,
+      "end": 66.5
+    },
+    {
+      "text": "That might still sound high, but for a problem with this many interacting factors, those are strong results.",
+      "start": 68.5,
+      "end": 76.5
+    },
+    {
+      "text": "Machine learning helps here because it lets us use the full data set at once, instead of hand-testing every factor.",
+      "start": 76.5,
+      "end": 83.5
+    },
+    {
+      "text": "The models can spot patterns that are hard to see by eye.",
+      "start": 84.0,
+      "end": 88.0
+    },
+    {
+      "text": "Then we open the models back up and examine which relationships matter most,",
+      "start": 88.0,
+      "end": 93.0
+    },
+    {
+      "text": "rather than manually working through thousands of possible parameter combinations, one by one.",
+      "start": 93.0,
+      "end": 101.0
+    },
+    {
+      "text": "Once we had those correlations, we compared them with historical failure events.",
+      "start": 102.0,
+      "end": 109.0
+    },
+    {
+      "text": "At a high level, those failure records supported our main trends, including the regions and circuits most susceptible to corrosion.",
+      "start": 109.5,
+      "end": 115.5
+    },
+    {
+      "text": "But some of the more specific insights could not be confirmed, because the failure records did not include enough detail.",
+      "start": 115.5,
+      "end": 122.5
+    },
+    {
+      "text": "Finally, we brought those insights into a Power BI dashboard that lets Murphy Oil engineers explore the patterns and correlations for themselves.",
+      "start": 124.5,
+      "end": 132.5
+    },
+    {
+      "text": "It updates automatically whenever new inspection data comes in.",
+      "start": 132.5,
+      "end": 137.5
+    },
+    {
+      "text": "It also risk-ranks the equipment locations that may need more frequent inspection or closer attention,",
+      "start": 138.0,
+      "end": 147.0
+    },
+    {
+      "text": "based on a formula we created using the validated parameters we identified.",
+      "start": 147.0,
+      "end": 153.0
+    }
+  ],
+  "diff": [
+    {
+      "type": "replace",
+      "before": "106 and our sponsor is",
+      "after": "106, and we partnered with"
+    },
+    {
+      "type": "replace",
+      "before": "an",
+      "after": "a U.S.-based"
+    },
+    {
+      "type": "replace",
+      "before": "company from the U.S. The goal of our",
+      "after": "company. Our"
+    },
+    {
+      "type": "replace",
+      "before": "is to perform data analysis on",
+      "after": "looks at"
+    },
+    {
+      "type": "replace",
+      "before": "and understand",
+      "after": "to answer one practical question:"
+    },
+    {
+      "type": "replace",
+      "before": "are the main drivers of",
+      "after": "is really driving"
+    },
+    {
+      "type": "replace",
+      "before": "on",
+      "after": "in"
+    },
+    {
+      "type": "replace",
+      "before": "equipment. Particularly, we are",
+      "after": "equipment? We"
+    },
+    {
+      "type": "delete",
+      "before": "their",
+      "after": ""
+    },
+    {
+      "type": "delete",
+      "before": "all of",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "circuit",
+      "after": "circuits"
+    },
+    {
+      "type": "replace",
+      "before": "it. Horizontal separators are just big pieces of equipment that",
+      "after": "them. A horizontal separator is a large vessel that takes the production stream and"
+    },
+    {
+      "type": "replace",
+      "before": "the produce",
+      "after": "it"
+    },
+    {
+      "type": "replace",
+      "before": "water. And",
+      "after": "water, so each stream can move on"
+    },
+    {
+      "type": "delete",
+      "before": "it to be",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "refined and distributed.",
+      "after": "refining and distribution."
+    },
+    {
+      "type": "replace",
+      "before": "find these drivers of corrosion, we used both",
+      "after": "identify the corrosion drivers, we started with"
+    },
+    {
+      "type": "replace",
+      "before": "analysis based on",
+      "after": "analysis, using the"
+    },
+    {
+      "type": "replace",
+      "before": "information available on corrosion",
+      "after": "to map the"
+    },
+    {
+      "type": "replace",
+      "before": "that we should be expecting",
+      "after": "we would expect"
+    },
+    {
+      "type": "replace",
+      "before": "And we also",
+      "after": "Then we took that same inspection data and"
+    },
+    {
+      "type": "replace",
+      "before": "the data.",
+      "after": "it."
+    },
+    {
+      "type": "replace",
+      "before": "all of the",
+      "after": "the models"
+    },
+    {
+      "type": "replace",
+      "before": "parameters into the model when we were making predicts the percentage for",
+      "after": "variables and asked a simple question: can they predict percent wall"
+    },
+    {
+      "type": "replace",
+      "before": "of the piping. Our models have an average accuracy of",
+      "after": "in the piping? Across the models, we reached about"
+    },
+    {
+      "type": "replace",
+      "before": "and",
+      "after": "accuracy, with"
+    },
+    {
+      "type": "replace",
+      "before": "Meaning that, on average, the rear wall loss will be off by",
+      "after": "In practical terms, that means the predicted wall-loss percentage is usually within"
+    },
+    {
+      "type": "replace",
+      "before": "3%. This",
+      "after": "3% of the actual value. That"
+    },
+    {
+      "type": "replace",
+      "before": "seem like a lot,",
+      "after": "still sound high,"
+    },
+    {
+      "type": "delete",
+      "before": "it's actually pretty solid metrics",
+      "after": ""
+    },
+    {
+      "type": "insert",
+      "before": "",
+      "after": "a problem with"
+    },
+    {
+      "type": "replace",
+      "before": "type of problem. The machine",
+      "after": "many interacting factors, those are strong results. Machine"
+    },
+    {
+      "type": "replace",
+      "before": "approach is really good",
+      "after": "helps"
+    },
+    {
+      "type": "replace",
+      "before": "allows",
+      "after": "lets"
+    },
+    {
+      "type": "replace",
+      "before": "to just pass the",
+      "after": "use the full"
+    },
+    {
+      "type": "replace",
+      "before": "sets into the models. And the",
+      "after": "set at once, instead of hand-testing every factor. The"
+    },
+    {
+      "type": "replace",
+      "before": "itself learns the",
+      "after": "can spot"
+    },
+    {
+      "type": "replace",
+      "before": "on the data. And we then just",
+      "after": "that are hard to see by eye. Then we"
+    },
+    {
+      "type": "delete",
+      "before": "and explore",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "to surface these",
+      "after": "back up and examine which"
+    },
+    {
+      "type": "replace",
+      "before": "on the data. Instead of having to go",
+      "after": "matter most, rather than manually working"
+    },
+    {
+      "type": "delete",
+      "before": "all of the",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "combinations that can be done on the parameters. After understanding the",
+      "after": "possible parameter combinations, one by one. Once we had those"
+    },
+    {
+      "type": "replace",
+      "before": "the next step on the project was to validate our findings against",
+      "after": "we compared them with"
+    },
+    {
+      "type": "replace",
+      "before": "Overall,",
+      "after": "At a high level, those failure records supported"
+    },
+    {
+      "type": "replace",
+      "before": "macro trends were confirmed, such as",
+      "after": "main trends, including"
+    },
+    {
+      "type": "delete",
+      "before": "the",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "that are more",
+      "after": "most"
+    },
+    {
+      "type": "replace",
+      "before": "couldn't",
+      "after": "could not"
+    },
+    {
+      "type": "replace",
+      "before": "validated",
+      "after": "confirmed,"
+    },
+    {
+      "type": "delete",
+      "before": "of a lack of details on",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "events. At the end, we then concatenated all of",
+      "after": "records did not include enough detail. Finally, we brought"
+    },
+    {
+      "type": "delete",
+      "before": "the",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "oil",
+      "after": "Oil"
+    },
+    {
+      "type": "insert",
+      "before": "",
+      "after": "patterns and"
+    },
+    {
+      "type": "replace",
+      "before": "and trends.",
+      "after": "for themselves."
+    },
+    {
+      "type": "replace",
+      "before": "gets updated",
+      "after": "updates"
+    },
+    {
+      "type": "replace",
+      "before": "when more",
+      "after": "whenever new"
+    },
+    {
+      "type": "replace",
+      "before": "is taken. And it risk ranks the",
+      "after": "comes in. It also risk-ranks the equipment"
+    },
+    {
+      "type": "replace",
+      "before": "of the equipments that",
+      "after": "that may"
+    },
+    {
+      "type": "delete",
+      "before": "to be inspected",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "often",
+      "after": "frequent inspection"
+    },
+    {
+      "type": "replace",
+      "before": "receiving special attention. Based",
+      "after": "closer attention, based"
+    },
+    {
+      "type": "replace",
+      "before": "that we have",
+      "after": "we"
+    },
+    {
+      "type": "replace",
+      "before": "that uses",
+      "after": "using"
+    },
+    {
+      "type": "replace",
+      "before": "that we've seen.",
+      "after": "we identified."
+    }
+  ]
+}

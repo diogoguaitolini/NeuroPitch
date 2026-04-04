@@ -21,11 +21,20 @@ env/
 .mypy_cache/
 .ruff_cache/
 
-# Audio / session artifacts
+# Audio / session artifacts (raw pipeline inputs/outputs)
 *.mp3
 *.wav
 *.tsv
-sessions/
+/sessions/
+
+# Allow exported static assets in the UI
+!ui/public/sessions/
+!ui/public/sessions/**
+!ui/public/**/*.mp3
+
+# Node
+node_modules/
+ui/dist/
 
 # IDE
 .vscode/

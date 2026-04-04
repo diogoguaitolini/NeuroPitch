@@ -71,19 +71,29 @@ def run(
     # ------------------------------------------------------------------
     logger.info("=== Iteration 0 (original) ===")
 
-    # Transcribe
-    transcript = transcribe(audio_path, client=client)
-    session.save_audio(0, audio_path)
-    session.save_transcript(0, transcript)
+    # Transcribe (skip if already on disk)
+    transcript_cache = session.iter_dir(0) / "transcript.json"
+    if transcript_cache.exists():
+        logger.info("Iter 0 transcript already on disk — skipping Whisper.")
+        transcript = session.load_transcript(0)
+    else:
+        transcript = transcribe(audio_path, client=client)
+        session.save_audio(0, audio_path)
+        session.save_transcript(0, transcript)
 
     # Encode (use voxels cache if this session already ran iter 0)
     voxel_cache = session.iter_dir(0) / "voxels.npy"
     voxels = encode(audio_path, cache_path=voxel_cache)
     session.save_voxels(0, voxels)
 
-    # Decode
-    profile = decode(voxels)
-    session.save_profile(0, profile)
+    # Decode (use profile cache if already on disk)
+    profile_cache = session.iter_dir(0) / "profile.json"
+    if profile_cache.exists():
+        logger.info("Iter 0 profile already on disk — skipping decode.")
+        profile = session.load_profile(0)
+    else:
+        profile = decode(voxels)
+        session.save_profile(0, profile)
 
     reward_history = [mean_reward(profile)]
     logger.info("Iter 0 reward: %.4f", reward_history[0])
@@ -98,26 +108,34 @@ def run(
     for i in range(1, max_iterations + 1):
         logger.info("=== Iteration %d ===", i)
 
-        result = iterate(
-            audio_path=current_audio,
-            cognitive_profile=current_profile,
-            transcript=current_transcript,
-            output_dir=session.iter_dir(i),
-            client=client,
-        )
+        if session.voxels_cached(i):
+            # Full iteration already on disk — reload and skip GPT/TTS/encode
+            logger.info("Iteration %d already complete — loading from disk.", i)
+            new_voxels = session.load_voxels(i)
+            new_profile = session.load_profile(i)
+            new_transcript = session.load_transcript(i)
+            new_audio = session.iter_dir(i) / "audio.mp3"
+        else:
+            result = iterate(
+                audio_path=current_audio,
+                cognitive_profile=current_profile,
+                transcript=current_transcript,
+                output_dir=session.iter_dir(i),
+                client=client,
+            )
 
-        new_audio = result["audio_path"]
-        new_transcript = result["transcript"]
+            new_audio = result["audio_path"]
+            new_transcript = result["transcript"]
 
-        # Encode new audio
-        voxel_cache = session.iter_dir(i) / "voxels.npy"
-        new_voxels = encode(new_audio, cache_path=voxel_cache)
-        session.save_voxels(i, new_voxels)
+            # Encode new audio
+            voxel_cache = session.iter_dir(i) / "voxels.npy"
+            new_voxels = encode(new_audio, cache_path=voxel_cache)
+            session.save_voxels(i, new_voxels)
 
-        # Decode new audio
-        new_profile = decode(new_voxels)
-        session.save_profile(i, new_profile)
-        session.save_transcript(i, new_transcript)
+            # Decode new audio
+            new_profile = decode(new_voxels)
+            session.save_profile(i, new_profile)
+            session.save_transcript(i, new_transcript)
 
         new_reward = mean_reward(new_profile)
         reward_history.append(new_reward)

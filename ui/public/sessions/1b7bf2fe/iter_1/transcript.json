@@ -1,0 +1,112 @@
+[
+  {
+    "text": "Hi, welcome to our booth. We are Group 106, and our sponsor is Murphy Oil, a U.S.-based upstream oil and gas company.",
+    "start": 0.0,
+    "end": 8.5
+  },
+  {
+    "text": "Our capstone focuses on analyzing their inspection data to understand what is really driving corrosion in their equipment.",
+    "start": 8.5,
+    "end": 16.5
+  },
+  {
+    "text": "More specifically, we looked at their horizontal separators and the piping circuits connected to them.",
+    "start": 16.5,
+    "end": 23.0
+  },
+  {
+    "text": "A horizontal separator is a large vessel that splits the production stream into oil, gas, and water,",
+    "start": 23.0,
+    "end": 29.5
+  },
+  {
+    "text": "so each stream can move on for further refining and distribution.",
+    "start": 30.5,
+    "end": 35.0
+  },
+  {
+    "text": "To identify those corrosion drivers, we started with manual analysis, using the literature to map the corrosion mechanisms we would expect to see.",
+    "start": 35.0,
+    "end": 45.0
+  },
+  {
+    "text": "Then we trained machine learning models on the same inspection data.",
+    "start": 45.0,
+    "end": 48.0
+  },
+  {
+    "text": "We gave the models hundreds of variables and asked them to predict percent wall loss in the piping.",
+    "start": 48.0,
+    "end": 54.0
+  },
+  {
+    "text": "Across the models, we reached about 86% accuracy, with an average error of 2.6%.",
+    "start": 55.0,
+    "end": 60.5
+  },
+  {
+    "text": "So in practice, the predicted wall-loss percentage is off by about 3% on average.",
+    "start": 60.5,
+    "end": 66.5
+  },
+  {
+    "text": "That might sound high, but for a problem this complex, those are actually strong results.",
+    "start": 68.5,
+    "end": 76.5
+  },
+  {
+    "text": "Machine learning is especially useful here because we can feed in the full data set instead of hand-testing every factor.",
+    "start": 76.5,
+    "end": 83.5
+  },
+  {
+    "text": "The models then learn the patterns hidden in that data.",
+    "start": 84.0,
+    "end": 88.0
+  },
+  {
+    "text": "After that, we open up the models and inspect which relationships matter most,",
+    "start": 88.0,
+    "end": 93.0
+  },
+  {
+    "text": "instead of manually sorting through thousands of possible parameter combinations.",
+    "start": 93.0,
+    "end": 101.0
+  },
+  {
+    "text": "Once we understood those correlations, the next step was to compare them with historical failure events.",
+    "start": 102.0,
+    "end": 109.0
+  },
+  {
+    "text": "At a high level, those failure records supported our main trends, including the regions and circuits most susceptible to corrosion.",
+    "start": 109.5,
+    "end": 115.5
+  },
+  {
+    "text": "But some of the more specific insights could not be confirmed, because the failure records did not include enough detail.",
+    "start": 115.5,
+    "end": 122.5
+  },
+  {
+    "text": "Finally, we brought all of those insights into a Power BI dashboard that lets Murphy Oil engineers explore the patterns and correlations.",
+    "start": 124.5,
+    "end": 132.5
+  },
+  {
+    "text": "It updates automatically whenever new inspection data comes in.",
+    "start": 132.5,
+    "end": 137.5
+  },
+  {
+    "text": "It also risk-ranks the equipment locations that may need more frequent inspection or closer attention,",
+    "start": 138.0,
+    "end": 147.0
+  },
+  {
+    "text": "based on a formula we created using the validated parameters we identified.",
+    "start": 147.0,
+    "end": 153.0
+  }
+]

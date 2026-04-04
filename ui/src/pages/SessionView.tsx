@@ -19,7 +19,6 @@ export default function SessionView() {
   const [activePhrase, setActivePhrase] = useState<number>(0)
   const savedPhraseRef = useRef(0)
   const [phraseScores, setPhraseScores] = useState<PhraseScores>({})
-  const [isIterating,  setIsIterating]  = useState(false)
   const [loadError,    setLoadError]    = useState('')
 
   useEffect(() => {
@@ -54,29 +53,6 @@ export default function SessionView() {
   function handleSelectIter(i: number) {
     savedPhraseRef.current = activePhrase
     setIterIndex(i)
-  }
-
-  async function handleRunIteration() {
-    if (!id || isIterating) return
-    setIsIterating(true)
-    try {
-      await api.iterate(id)
-      const interval = setInterval(async () => {
-        const status = await api.status(id)
-        if (status.status === 'done') {
-          clearInterval(interval)
-          const newReport = await api.report(id)
-          setReport(newReport)
-          setIterIndex(newReport.n_iterations)
-          setIsIterating(false)
-        } else if (status.status === 'error') {
-          clearInterval(interval)
-          setIsIterating(false)
-        }
-      }, 3000)
-    } catch {
-      setIsIterating(false)
-    }
   }
 
   if (loadError) {
@@ -150,8 +126,6 @@ export default function SessionView() {
           report={report}
           activeIter={iterIndex}
           onSelect={handleSelectIter}
-          onRunIteration={handleRunIteration}
-          isRunning={isIterating}
         />
       )}
     </div>

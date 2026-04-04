@@ -1,0 +1,112 @@
+[
+  {
+    "text": "Hi, welcome to our booth. We are Group 106 and our sponsor is Murphy Oil, an upstream oil and gas company from the U.S.",
+    "start": 0.0,
+    "end": 8.5
+  },
+  {
+    "text": "The goal of our capstone is to perform data analysis on their inspection data and understand what are the main drivers of corrosion on their equipment.",
+    "start": 8.5,
+    "end": 16.5
+  },
+  {
+    "text": "Particularly, we are focused on their horizontal separators and all of the piping circuit connected to it.",
+    "start": 16.5,
+    "end": 23.0
+  },
+  {
+    "text": "Horizontal separators are just big pieces of equipment that separates the produce into oil, gas, and water.",
+    "start": 23.0,
+    "end": 29.5
+  },
+  {
+    "text": "And for it to be further refined and distributed.",
+    "start": 30.5,
+    "end": 35.0
+  },
+  {
+    "text": "To find these drivers of corrosion, we used both manual analysis based on literature information available on corrosion mechanisms that we should be expecting to see.",
+    "start": 35.0,
+    "end": 45.0
+  },
+  {
+    "text": "And we also trained machine learning models on the data.",
+    "start": 45.0,
+    "end": 48.0
+  },
+  {
+    "text": "We fed all of the hundreds of parameters into the model when we were making predicts the percentage for loss of the piping.",
+    "start": 48.0,
+    "end": 54.0
+  },
+  {
+    "text": "Our models have an average accuracy of 86% and an average error of 2.6%.",
+    "start": 55.0,
+    "end": 60.5
+  },
+  {
+    "text": "Meaning that, on average, the rear wall loss will be off by about 3%.",
+    "start": 60.5,
+    "end": 66.5
+  },
+  {
+    "text": "This might seem like a lot, but it's actually pretty solid metrics for this type of problem.",
+    "start": 68.5,
+    "end": 76.5
+  },
+  {
+    "text": "The machine learning approach is really good here because it allows us to just pass the data sets into the models.",
+    "start": 76.5,
+    "end": 83.5
+  },
+  {
+    "text": "And the models itself learns the patterns on the data.",
+    "start": 84.0,
+    "end": 88.0
+  },
+  {
+    "text": "And we then just open and explore the models to surface these relationships on the data.",
+    "start": 88.0,
+    "end": 93.0
+  },
+  {
+    "text": "Instead of having to go through all of the thousands of combinations that can be done on the parameters.",
+    "start": 93.0,
+    "end": 101.0
+  },
+  {
+    "text": "After understanding the correlations, the next step on the project was to validate our findings against historical failure events.",
+    "start": 102.0,
+    "end": 109.0
+  },
+  {
+    "text": "Overall, our macro trends were confirmed, such as the regions and the circuits that are more susceptible to corrosion.",
+    "start": 109.5,
+    "end": 115.5
+  },
+  {
+    "text": "But some of the more specific insights couldn't be validated because of a lack of details on the failure events.",
+    "start": 115.5,
+    "end": 122.5
+  },
+  {
+    "text": "At the end, we then concatenated all of those insights into a Power BI dashboard that lets the Murphy oil engineers explore the correlations and trends.",
+    "start": 124.5,
+    "end": 132.5
+  },
+  {
+    "text": "It gets updated automatically when more inspection data is taken.",
+    "start": 132.5,
+    "end": 137.5
+  },
+  {
+    "text": "And it risk ranks the locations of the equipments that need to be inspected more often or receiving special attention.",
+    "start": 138.0,
+    "end": 147.0
+  },
+  {
+    "text": "Based on a formula that we have created that uses the validated parameters that we've seen.",
+    "start": 147.0,
+    "end": 153.0
+  }
+]

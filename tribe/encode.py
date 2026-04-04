@@ -114,6 +114,17 @@ def encode(audio_path: str | Path, cache_path: str | Path | None = None) -> np.n
     voxel_maps, _segments = model.predict(events=events, verbose=True)
     # voxel_maps: np.ndarray shape (n_timepoints, n_vertices)
 
+    # Free the model from VRAM after each inference — TRIBE loads several large
+    # sub-models (LLaMA, wav2vec2-bert) that accumulate across iterations on a
+    # small GPU.  Force-unload the singleton so the next call starts clean.
+    global _model
+    import torch, gc
+    _model = None
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.synchronize()
+        torch.cuda.empty_cache()
+
     if cache_path is not None:
         cache_path.parent.mkdir(parents=True, exist_ok=True)
         np.save(cache_path, voxel_maps)

@@ -1,0 +1,615 @@
+{
+  "session_id": "1be99bc1",
+  "n_iterations": 1,
+  "reward_history": [
+    -0.8804265953124614,
+    -0.8026975243679878
+  ],
+  "improvement_pct": 8.83,
+  "transcript_v1": [
+    {
+      "text": "Hello everyone. By a quick show of hands, how many of you here either work or know someone who works in oil and gas?",
+      "start": 0.0,
+      "end": 19.0
+    },
+    {
+      "text": "It's quite a few, right? And we all know how important oil and gas is to Calgary. For decades it has brought in hundreds of billions in economic development.",
+      "start": 20.0,
+      "end": 29.0
+    },
+    {
+      "text": "And there are companies that are headquartered here that operate assets that are worth billions all across the world.",
+      "start": 29.0,
+      "end": 35.0
+    },
+    {
+      "text": "Now, whether those assets rely on me depends heavily on one activity, inspections.",
+      "start": 35.0,
+      "end": 42.0
+    },
+    {
+      "text": "So these inspections, they determine whether equipment stays in service, gets repaired, or gets shut down.",
+      "start": 42.0,
+      "end": 48.0
+    },
+    {
+      "text": "And you may imagine, if something goes wrong here, we're not only talking about a lot of money, but also about people's safety.",
+      "start": 48.0,
+      "end": 55.0
+    },
+    {
+      "text": "Now here's the contradiction. You have a modern facility that runs your blood count sensors, real-time monitoring, predictive analysis.",
+      "start": 55.0,
+      "end": 63.0
+    },
+    {
+      "text": "But the moment an inspection finishes, the process checks back decades.",
+      "start": 63.0,
+      "end": 67.0
+    },
+    {
+      "text": "You have a highly trained professional evaluating complex equipment, and then spending hours to manually convert what you already know into real work.",
+      "start": 67.0,
+      "end": 75.0
+    },
+    {
+      "text": "And here's the real problem. You see, these inspectors are trained to make reliability decisions.",
+      "start": 76.0,
+      "end": 82.0
+    },
+    {
+      "text": "So it is not only a waste, but an underutilization of their skill to have them spend hours on reporting.",
+      "start": 82.0,
+      "end": 89.0
+    },
+    {
+      "text": "And no matter how good your internal standards and procedures are, there's always going to be some variation.",
+      "start": 89.0,
+      "end": 96.0
+    },
+    {
+      "text": "Because at the end of the day, every inspector sees and frames the situation differently.",
+      "start": 96.0,
+      "end": 101.0
+    },
+    {
+      "text": "The real problem, that variation, is a problem for the reliability and data analytics for these programs.",
+      "start": 101.0,
+      "end": 110.0
+    },
+    {
+      "text": "Because as soon as your data starts becoming bearable, the decision quality becomes very poor.",
+      "start": 110.0,
+      "end": 116.0
+    },
+    {
+      "text": "We built Inspecto to change that. Inspecto is an app that lets users take pictures, report voice notes, and observations on the go.",
+      "start": 116.0,
+      "end": 125.0
+    },
+    {
+      "text": "It then automatically gathers all of that information, understands the specific inspection context, and builds the structured report in real time.",
+      "start": 125.0,
+      "end": 135.0
+    },
+    {
+      "text": "Inspecto aims to reduce data variability, information waiting to be processed, and ultimately lead times.",
+      "start": 135.0,
+      "end": 142.0
+    },
+    {
+      "text": "For inspectors, this means that now hours of reporting becomes just minutes of reviewing.",
+      "start": 142.0,
+      "end": 149.0
+    },
+    {
+      "text": "For managers, it means better decision making, it means less report, and better data quality.",
+      "start": 149.0,
+      "end": 155.0
+    },
+    {
+      "text": "And for companies, ultimately, this means that they can now run more efficient reliability programs and be more regulatory compliant.",
+      "start": 155.0,
+      "end": 169.0
+    },
+    {
+      "text": "Because whenever an inspector documents differently, your integrity program is only as strong as your weakest report.",
+      "start": 170.0,
+      "end": 177.0
+    },
+    {
+      "text": "Thank you very much.",
+      "start": 177.0,
+      "end": 178.0
+    },
+    {
+      "text": "Thank you.",
+      "start": 179.0,
+      "end": 181.0
+    }
+  ],
+  "transcript_vfinal": [
+    {
+      "text": "Hello everyone. Quick show of hands: how many of you work in oil and gas, or know a friend, family member, or colleague who does?",
+      "start": 0.0,
+      "end": 19.0
+    },
+    {
+      "text": "That\u2019s a lot of hands, right? And in Calgary, that makes sense. For decades, oil and gas has created hundreds of billions in economic development.",
+      "start": 20.0,
+      "end": 29.0
+    },
+    {
+      "text": "Some of the companies headquartered here operate assets worth billions of dollars across the world.",
+      "start": 29.0,
+      "end": 35.0
+    },
+    {
+      "text": "And the reliability of those assets often comes down to one thing: inspections.",
+      "start": 35.0,
+      "end": 42.0
+    },
+    {
+      "text": "Those inspections decide whether equipment stays in service, gets repaired, or gets shut down.",
+      "start": 42.0,
+      "end": 48.0
+    },
+    {
+      "text": "So if something goes wrong here, the stakes are not just financial. You are also talking about people\u2019s safety.",
+      "start": 48.0,
+      "end": 55.0
+    },
+    {
+      "text": "Now here\u2019s the contradiction. You can walk through a modern facility with sensors everywhere, real-time monitoring, and predictive analytics.",
+      "start": 55.0,
+      "end": 63.0
+    },
+    {
+      "text": "But the moment an inspection ends, the workflow snaps back decades.",
+      "start": 63.0,
+      "end": 67.0
+    },
+    {
+      "text": "A highly trained professional evaluates complex equipment, then spends hours manually turning that insight into a report.",
+      "start": 67.0,
+      "end": 75.0
+    },
+    {
+      "text": "And that is the real problem. Inspectors are trained to make reliability decisions.",
+      "start": 76.0,
+      "end": 82.0
+    },
+    {
+      "text": "Their value is in judgment, not in spending hours on reporting.",
+      "start": 82.0,
+      "end": 89.0
+    },
+    {
+      "text": "And no matter how strong your standards and procedures are, some variation always gets in.",
+      "start": 89.0,
+      "end": 96.0
+    },
+    {
+      "text": "Because at the end of the day, every inspector sees the situation a little differently and frames it differently.",
+      "start": 96.0,
+      "end": 101.0
+    },
+    {
+      "text": "And that variation does real damage to both reliability programs and the data analytics behind them.",
+      "start": 101.0,
+      "end": 110.0
+    },
+    {
+      "text": "When your data is inconsistent, decision quality drops fast.",
+      "start": 110.0,
+      "end": 116.0
+    },
+    {
+      "text": "That\u2019s why we built Inspecto. It\u2019s an app that lets inspectors capture photos, voice notes, and observations while they work.",
+      "start": 116.0,
+      "end": 125.0
+    },
+    {
+      "text": "It then brings all of that together, understands the inspection context, and builds a structured report in real time.",
+      "start": 125.0,
+      "end": 135.0
+    },
+    {
+      "text": "Inspecto is designed to reduce data variability, reduce information waiting to be processed, and ultimately shorten lead times.",
+      "start": 135.0,
+      "end": 142.0
+    },
+    {
+      "text": "For inspectors, that means hours of reporting become minutes of review.",
+      "start": 142.0,
+      "end": 149.0
+    },
+    {
+      "text": "For managers, it means better decision-making, less reporting burden, and better data quality.",
+      "start": 149.0,
+      "end": 155.0
+    },
+    {
+      "text": "And for companies, ultimately, it means more efficient reliability programs and stronger regulatory compliance.",
+      "start": 155.0,
+      "end": 169.0
+    },
+    {
+      "text": "Because whenever inspectors document differently, your integrity program is only as strong as its weakest report.",
+      "start": 170.0,
+      "end": 177.0
+    },
+    {
+      "text": "Thank you very much.",
+      "start": 177.0,
+      "end": 178.0
+    },
+    {
+      "text": "Thank you.",
+      "start": 179.0,
+      "end": 181.0
+    }
+  ],
+  "diff": [
+    {
+      "type": "replace",
+      "before": "By a quick",
+      "after": "Quick"
+    },
+    {
+      "type": "replace",
+      "before": "hands,",
+      "after": "hands:"
+    },
+    {
+      "type": "delete",
+      "before": "here either",
+      "after": ""
+    },
+    {
+      "type": "insert",
+      "before": "",
+      "after": "in oil and gas,"
+    },
+    {
+      "type": "replace",
+      "before": "someone",
+      "after": "a friend, family member, or colleague"
+    },
+    {
+      "type": "replace",
+      "before": "works in",
+      "after": "does? That\u2019s a lot of hands, right? And in Calgary, that makes sense. For decades,"
+    },
+    {
+      "type": "delete",
+      "before": "gas? It's quite a few, right? And we all know how important oil and",
+      "after": ""
+    },
+    {
+      "type": "delete",
+      "before": "is to Calgary. For decades it",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "brought in",
+      "after": "created"
+    },
+    {
+      "type": "replace",
+      "before": "And there are",
+      "after": "Some of the"
+    },
+    {
+      "type": "delete",
+      "before": "that are",
+      "after": ""
+    },
+    {
+      "type": "delete",
+      "before": "that",
+      "after": ""
+    },
+    {
+      "type": "delete",
+      "before": "that are",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "all",
+      "after": "of dollars"
+    },
+    {
+      "type": "replace",
+      "before": "Now, whether",
+      "after": "And the reliability of"
+    },
+    {
+      "type": "replace",
+      "before": "rely on me depends heavily on",
+      "after": "often comes down to"
+    },
+    {
+      "type": "replace",
+      "before": "activity,",
+      "after": "thing:"
+    },
+    {
+      "type": "replace",
+      "before": "So these inspections, they determine",
+      "after": "Those inspections decide"
+    },
+    {
+      "type": "replace",
+      "before": "And you may imagine,",
+      "after": "So"
+    },
+    {
+      "type": "replace",
+      "before": "we're",
+      "after": "the stakes are"
+    },
+    {
+      "type": "replace",
+      "before": "only",
+      "after": "just financial. You are also"
+    },
+    {
+      "type": "replace",
+      "before": "a lot of money, but also about people's",
+      "after": "people\u2019s"
+    },
+    {
+      "type": "replace",
+      "before": "here's",
+      "after": "here\u2019s"
+    },
+    {
+      "type": "replace",
+      "before": "have",
+      "after": "can walk through"
+    },
+    {
+      "type": "replace",
+      "before": "that runs your blood count sensors,",
+      "after": "with sensors everywhere,"
+    },
+    {
+      "type": "insert",
+      "before": "",
+      "after": "and"
+    },
+    {
+      "type": "replace",
+      "before": "analysis.",
+      "after": "analytics."
+    },
+    {
+      "type": "replace",
+      "before": "finishes, the process checks",
+      "after": "ends, the workflow snaps"
+    },
+    {
+      "type": "replace",
+      "before": "You have a",
+      "after": "A"
+    },
+    {
+      "type": "replace",
+      "before": "evaluating",
+      "after": "evaluates"
+    },
+    {
+      "type": "delete",
+      "before": "and",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "spending",
+      "after": "spends"
+    },
+    {
+      "type": "delete",
+      "before": "to",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "convert what you already know",
+      "after": "turning that insight"
+    },
+    {
+      "type": "replace",
+      "before": "real work. And here's",
+      "after": "a report. And that is"
+    },
+    {
+      "type": "replace",
+      "before": "You see, these inspectors",
+      "after": "Inspectors"
+    },
+    {
+      "type": "replace",
+      "before": "So it is",
+      "after": "Their value is in judgment,"
+    },
+    {
+      "type": "replace",
+      "before": "only a waste, but an underutilization of their skill to have them spend",
+      "after": "in spending"
+    },
+    {
+      "type": "replace",
+      "before": "good",
+      "after": "strong"
+    },
+    {
+      "type": "delete",
+      "before": "internal",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "there's",
+      "after": "some variation"
+    },
+    {
+      "type": "replace",
+      "before": "going to be some variation.",
+      "after": "gets in."
+    },
+    {
+      "type": "insert",
+      "before": "",
+      "after": "the situation a little differently"
+    },
+    {
+      "type": "replace",
+      "before": "the situation",
+      "after": "it"
+    },
+    {
+      "type": "replace",
+      "before": "The",
+      "after": "And that variation does"
+    },
+    {
+      "type": "replace",
+      "before": "problem, that variation, is a problem for the",
+      "after": "damage to both"
+    },
+    {
+      "type": "replace",
+      "before": "and",
+      "after": "programs and the"
+    },
+    {
+      "type": "replace",
+      "before": "for these programs. Because as soon as",
+      "after": "behind them. When"
+    },
+    {
+      "type": "replace",
+      "before": "starts becoming bearable, the",
+      "after": "is inconsistent,"
+    },
+    {
+      "type": "replace",
+      "before": "becomes very poor. We",
+      "after": "drops fast. That\u2019s why we"
+    },
+    {
+      "type": "replace",
+      "before": "Inspecto to change that. Inspecto is",
+      "after": "Inspecto. It\u2019s"
+    },
+    {
+      "type": "replace",
+      "before": "users take pictures, report",
+      "after": "inspectors capture photos,"
+    },
+    {
+      "type": "replace",
+      "before": "on the go.",
+      "after": "while they work."
+    },
+    {
+      "type": "replace",
+      "before": "automatically gathers",
+      "after": "brings"
+    },
+    {
+      "type": "replace",
+      "before": "information,",
+      "after": "together,"
+    },
+    {
+      "type": "delete",
+      "before": "specific",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "the",
+      "after": "a"
+    },
+    {
+      "type": "replace",
+      "before": "aims",
+      "after": "is designed"
+    },
+    {
+      "type": "insert",
+      "before": "",
+      "after": "reduce"
+    },
+    {
+      "type": "insert",
+      "before": "",
+      "after": "shorten"
+    },
+    {
+      "type": "replace",
+      "before": "this",
+      "after": "that"
+    },
+    {
+      "type": "delete",
+      "before": "that now",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "becomes just",
+      "after": "become"
+    },
+    {
+      "type": "replace",
+      "before": "reviewing.",
+      "after": "review."
+    },
+    {
+      "type": "replace",
+      "before": "decision making, it means",
+      "after": "decision-making,"
+    },
+    {
+      "type": "replace",
+      "before": "report,",
+      "after": "reporting burden,"
+    },
+    {
+      "type": "replace",
+      "before": "this",
+      "after": "it"
+    },
+    {
+      "type": "delete",
+      "before": "that they can now run",
+      "after": ""
+    },
+    {
+      "type": "replace",
+      "before": "be more",
+      "after": "stronger"
+    },
+    {
+      "type": "replace",
+      "before": "compliant.",
+      "after": "compliance."
+    },
+    {
+      "type": "replace",
+      "before": "an inspector documents",
+      "after": "inspectors document"
+    },
+    {
+      "type": "replace",
+      "before": "your",
+      "after": "its"
+    }
+  ]
+}

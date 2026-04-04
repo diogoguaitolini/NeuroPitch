@@ -1,20 +1,12 @@
 import type { Report } from '../types'
 
 interface Props {
-  report:         Report
-  activeIter:     number
-  onSelect:       (n: number) => void
-  onRunIteration: () => void
-  isRunning:      boolean
+  report:     Report
+  activeIter: number
+  onSelect:   (n: number) => void
 }
 
-export default function IterationBar({
-  report,
-  activeIter,
-  onSelect,
-  onRunIteration,
-  isRunning,
-}: Props) {
+export default function IterationBar({ report, activeIter, onSelect }: Props) {
   const iters = Array.from({ length: report.n_iterations + 1 }, (_, i) => i)
 
   return (

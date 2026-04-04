@@ -1,0 +1,28 @@
+# NeuroPitch — Python dependencies
+#
+# Install with:
+#   pip install -r requirements.txt
+#
+# Notes:
+#   - tribev2 pulls in torch, transformers, neuralset and their transitive deps.
+#     Expect a large install (~5 GB). A CUDA-capable GPU is strongly recommended.
+#   - nimare/nilearn are used for Neurosynth decoding and brain surface export.
+#   - openai >=2.0 is required (uses the v2 client API).
+
+# Pipeline
+openai>=2.0.0
+python-dotenv>=1.0.0
+numpy>=1.26.0
+
+# Brain encoding
+tribev2>=0.1.0
+huggingface-hub>=0.20.0
+pyyaml>=6.0
+
+# Cognitive decoding
+nilearn>=0.10.0
+nimare>=0.0.13
+
+# Utilities
+scipy>=1.11.0
+tqdm>=4.65.0
