@@ -122,13 +122,13 @@ export default function Home() {
     <div className="bg-warm-bg font-sans overflow-x-hidden">
 
       {/* ── NAV ────────────────────────────────────────────────────────── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-2.5 flex items-center gap-2 sm:gap-3"
+      <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-2.5 flex items-center justify-between sm:justify-start gap-2 sm:gap-3"
         style={{ background: 'rgba(235,231,223,0.85)', backdropFilter: 'blur(12px)' }}
       >
         <NavPill label="HOME"         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
         <NavPill label="HOW IT WORKS" onClick={() => scrollTo(howRef)} className="hidden sm:block" />
         <NavPill label="TECH"         onClick={() => scrollTo(demoRef)} />
-        <div className="flex-1" />
+        <div className="hidden sm:block flex-1" />
         <NavPill label="DEMO ↗"       onClick={() => scrollTo(demoRef)} filled />
       </nav>
 
@@ -163,9 +163,9 @@ export default function Home() {
             className="absolute left-1/2 z-20 pointer-events-auto"
             style={{
               transform: 'translateX(-50%)',
-              top: 'clamp(-120px, -18vw, -60px)',
-              width: 'clamp(220px, 50vw, 720px)',
-              height: 'clamp(220px, 50vw, 720px)',
+              top: 'clamp(-140px, -18vw, -60px)',
+              width: 'clamp(280px, 72vw, 720px)',
+              height: 'clamp(280px, 72vw, 720px)',
             }}
           >
             <motion.div
@@ -183,10 +183,9 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-            className="relative z-10 rounded-3xl overflow-hidden"
+            className="relative z-10 rounded-3xl overflow-hidden min-h-0 md:min-h-[50vh]"
             style={{
               background: 'linear-gradient(180deg, #2E2C28 0%, #948E81 100%)',
-              minHeight: '50vh',
             }}
           >
             {/* Mobile: stacked layout */}
@@ -320,32 +319,30 @@ export default function Home() {
         <div className="flex flex-col">
           {STEPS.map((step, i) => (
             <Reveal key={step.n} delay={i * 0.06}>
-              <div className="group border-t border-warm-border py-8 grid grid-cols-[5rem_1fr_2fr_auto] items-center gap-8 transition-colors duration-300 hover:bg-warm-surface rounded-xl px-4 -mx-4">
-                {/* Step number */}
-                <span
-                  className="font-display font-bold leading-none select-none"
-                  style={{
-                    fontSize: 'clamp(2.5rem, 4vw, 3.5rem)',
-                    color: '#C8C3B8',
-                  }}
-                >
-                  {step.n}
-                </span>
+              <div className="group border-t border-warm-border py-6 sm:py-8 transition-colors duration-300 hover:bg-warm-surface rounded-xl px-4 -mx-4">
+                {/* Mobile layout */}
+                <div className="flex sm:hidden items-baseline gap-4 mb-2">
+                  <span className="font-display font-bold leading-none select-none flex-none" style={{ fontSize: '2rem', color: '#C8C3B8' }}>
+                    {step.n}
+                  </span>
+                  <h3 className="font-display font-bold text-xl text-warm-dark tracking-tight">{step.title}</h3>
+                </div>
+                <p className="sm:hidden text-warm-muted text-sm font-light leading-relaxed">{step.body}</p>
 
-                {/* Title */}
-                <h3 className="font-display font-bold text-2xl text-warm-dark tracking-tight">
-                  {step.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-warm-muted text-sm font-light leading-relaxed">
-                  {step.body}
-                </p>
-
-                {/* Tag */}
-                <span className="text-xs font-display px-3 py-1 rounded-full border border-warm-border text-warm-muted whitespace-nowrap">
-                  {step.tag}
-                </span>
+                {/* Desktop layout */}
+                <div className="hidden sm:grid grid-cols-[5rem_1fr_2fr_auto] items-center gap-8">
+                  <span
+                    className="font-display font-bold leading-none select-none"
+                    style={{ fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', color: '#C8C3B8' }}
+                  >
+                    {step.n}
+                  </span>
+                  <h3 className="font-display font-bold text-2xl text-warm-dark tracking-tight">{step.title}</h3>
+                  <p className="text-warm-muted text-sm font-light leading-relaxed">{step.body}</p>
+                  <span className="text-xs font-display px-3 py-1 rounded-full border border-warm-border text-warm-muted whitespace-nowrap">
+                    {step.tag}
+                  </span>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -378,12 +375,12 @@ export default function Home() {
 
           {/* Tab indicators */}
           <Reveal delay={0.1}>
-          <div className="flex gap-2 mb-12">
+          <div className="flex flex-wrap gap-2 mb-12">
             {TECH.map((item, i) => (
               <button
                 key={item.name}
                 onClick={() => setActiveTech(i)}
-                className="font-display text-xs tracking-widest px-4 py-2 rounded-full border transition-all duration-300"
+                className="font-display text-xs tracking-widest px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border transition-all duration-300"
                 style={activeTech === i
                   ? { background: '#EBE7DF', color: '#2E2C28', borderColor: '#EBE7DF' }
                   : { background: 'transparent', color: '#948E81', borderColor: '#948E81' }
@@ -397,10 +394,10 @@ export default function Home() {
 
           {/* Content */}
           <Reveal delay={0.15}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" style={{ height: '460px' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center lg:h-[460px]">
 
             {/* Left — text */}
-            <div className="relative h-full overflow-hidden">
+            <div className="relative lg:h-full overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTech}
@@ -433,7 +430,7 @@ export default function Home() {
               </AnimatePresence>
 
               {/* Progress bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full overflow-hidden" style={{ background: '#48463F' }}>
+              <div className="lg:absolute mt-8 lg:mt-0 bottom-0 left-0 right-0 h-[2px] rounded-full overflow-hidden" style={{ background: '#48463F' }}>
                 <motion.div
                   key={activeTech}
                   className="h-full rounded-full"
@@ -445,8 +442,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — visual */}
-            <div className="flex items-center justify-center">
+            {/* Right — visual (hidden on mobile) */}
+            <div className="hidden lg:flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTech}
@@ -504,7 +501,7 @@ export default function Home() {
 
       {/* ── FOOTER ─────────────────────────────────────────────────────── */}
       <footer className="border-t border-warm-border">
-        <div className="px-8 sm:px-12 py-10 max-w-screen-xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div className="px-6 sm:px-12 py-8 sm:py-10 max-w-screen-xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-6">
           <div className="flex flex-col gap-1.5">
             <span className="font-display font-bold text-sm tracking-widest text-warm-dark">NEUROPITCH</span>
             <span className="font-display text-xs text-warm-muted font-light tracking-wide">

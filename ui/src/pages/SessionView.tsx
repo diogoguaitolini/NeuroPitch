@@ -20,6 +20,7 @@ export default function SessionView() {
   const savedPhraseRef = useRef(0)
   const [phraseScores, setPhraseScores] = useState<PhraseScores>({})
   const [loadError,    setLoadError]    = useState('')
+  const [mobileTab,    setMobileTab]    = useState<'brain' | 'text'>('brain')
 
   useEffect(() => {
     if (!id) return
@@ -76,7 +77,7 @@ export default function SessionView() {
 
       {/* ── Header ──────────────────────────────────────────────────── */}
       <header
-        className="flex-none px-8 py-3 flex items-center justify-between border-b border-warm-border"
+        className="flex-none px-6 py-3 flex items-center justify-between border-b border-warm-border"
         style={{ background: 'rgba(235,231,223,0.9)', backdropFilter: 'blur(12px)' }}
       >
         <button
@@ -86,13 +87,29 @@ export default function SessionView() {
           ← BACK
         </button>
 
+        {/* Mobile toggle */}
+        <div className="flex sm:hidden items-center gap-1 p-1 rounded-full border border-warm-border">
+          {(['brain', 'text'] as const).map(tab => (
+            <button
+              key={tab}
+              onClick={() => setMobileTab(tab)}
+              className="font-display text-xs tracking-widest px-3 py-1 rounded-full transition-all duration-200"
+              style={mobileTab === tab
+                ? { background: '#2E2C28', color: '#EBE7DF' }
+                : { color: '#948E81' }
+              }
+            >
+              {tab.toUpperCase()}
+            </button>
+          ))}
+        </div>
       </header>
 
       {/* ── Main split ──────────────────────────────────────────────── */}
       <div className="flex-1 flex overflow-hidden">
 
         {/* Left: scrollable pitch text */}
-        <div className="flex-1 overflow-y-auto warm-scroll">
+        <div className={`flex-1 overflow-y-auto warm-scroll ${mobileTab === 'text' ? 'block' : 'hidden'} sm:block`}>
           {transcript.length > 0 && profile ? (
             <PhrasePane
               transcript={transcript}
@@ -109,7 +126,7 @@ export default function SessionView() {
         </div>
 
         {/* Right: brain + scores */}
-        <aside className="flex-none w-[400px] flex flex-col overflow-hidden bg-warm-surface">
+        <aside className={`flex-none w-full sm:w-[400px] flex-col overflow-hidden bg-warm-surface ${mobileTab === 'brain' ? 'flex' : 'hidden'} sm:flex`}>
           <div className="flex-1 relative bg-warm-surface">
             <Brain3D scores={phraseScores} />
           </div>
