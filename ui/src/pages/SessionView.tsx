@@ -126,7 +126,7 @@ export default function SessionView() {
         </div>
 
         {/* Right: brain + scores */}
-        <aside className={`flex-none w-full sm:w-[400px] flex-col overflow-hidden bg-warm-surface ${mobileTab === 'brain' ? 'flex' : 'hidden'} sm:flex`}>
+        <aside className={`flex-none w-full sm:w-[400px] overflow-hidden bg-warm-surface sm:flex sm:flex-col ${mobileTab === 'brain' ? 'flex flex-col' : 'hidden'}`}>
           <div className="flex-1 relative bg-warm-surface">
             <Brain3D scores={phraseScores} />
           </div>
