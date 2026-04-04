@@ -122,11 +122,11 @@ export default function Home() {
     <div className="bg-warm-bg font-sans overflow-x-hidden">
 
       {/* ── NAV ────────────────────────────────────────────────────────── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-8 py-2.5 flex items-center gap-3"
+      <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-2.5 flex items-center gap-2 sm:gap-3"
         style={{ background: 'rgba(235,231,223,0.85)', backdropFilter: 'blur(12px)' }}
       >
         <NavPill label="HOME"         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} />
-        <NavPill label="HOW IT WORKS" onClick={() => scrollTo(howRef)} />
+        <NavPill label="HOW IT WORKS" onClick={() => scrollTo(howRef)} className="hidden sm:block" />
         <NavPill label="TECH"         onClick={() => scrollTo(demoRef)} />
         <div className="flex-1" />
         <NavPill label="DEMO ↗"       onClick={() => scrollTo(demoRef)} filled />
@@ -163,9 +163,9 @@ export default function Home() {
             className="absolute left-1/2 z-20 pointer-events-auto"
             style={{
               transform: 'translateX(-50%)',
-              top: '-18vw',
-              width: 'clamp(380px, 50vw, 720px)',
-              height: 'clamp(380px, 50vw, 720px)',
+              top: 'clamp(-120px, -18vw, -60px)',
+              width: 'clamp(220px, 50vw, 720px)',
+              height: 'clamp(220px, 50vw, 720px)',
             }}
           >
             <motion.div
@@ -189,7 +189,30 @@ export default function Home() {
               minHeight: '50vh',
             }}
           >
-            <div className="grid grid-cols-3 items-center gap-4 p-8 lg:p-12 min-h-[420px] lg:min-h-[500px]">
+            {/* Mobile: stacked layout */}
+            <div className="flex flex-col md:hidden p-6 gap-4" style={{ paddingTop: 'clamp(140px, 35vw, 200px)' }}>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                className="font-display font-light leading-tight tracking-tight text-center"
+                style={{ fontSize: 'clamp(1.5rem, 6vw, 2.5rem)', color: '#EBE7DF' }}
+              >
+                What if we could leverage neuroscience to guide LLMs?
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.65 }}
+                className="font-display font-light leading-tight tracking-tight text-center"
+                style={{ fontSize: 'clamp(1.5rem, 6vw, 2.5rem)', color: '#EBE7DF' }}
+              >
+                This project bridges the gap.
+              </motion.p>
+            </div>
+
+            {/* Desktop: 3-col layout */}
+            <div className="hidden md:grid grid-cols-3 items-center gap-4 p-8 lg:p-12 min-h-[420px] lg:min-h-[500px]">
               {/* Left copy */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -502,15 +525,17 @@ function NavPill({
   label,
   onClick,
   filled = false,
+  className = '',
 }: {
   label: string
   onClick: () => void
   filled?: boolean
+  className?: string
 }) {
   return (
     <button
       onClick={onClick}
-      className="font-display font-medium text-sm tracking-widest px-5 py-1.5 rounded-full border transition-all duration-200"
+      className={`font-display font-medium text-sm tracking-widest px-5 py-1.5 rounded-full border transition-all duration-200 ${className}`}
       style={
         filled
           ? { background: '#2E2C28', color: '#EBE7DF', borderColor: '#2E2C28' }
