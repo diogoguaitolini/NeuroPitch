@@ -164,7 +164,7 @@ export default function Home() {
             className="absolute left-1/2 z-20 pointer-events-auto"
             style={{
               transform: 'translateX(-50%)',
-              top: 'clamp(-160px, -26vw, -60px)',
+              top: '-20vw',
               width: 'clamp(280px, 72vw, 720px)',
               height: 'clamp(280px, 72vw, 720px)',
             }}
