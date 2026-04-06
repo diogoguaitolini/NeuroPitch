@@ -286,7 +286,7 @@ export default function Home() {
           <div className="flex flex-col justify-center gap-6 lg:gap-8">
             {[
               `Over the past few months, I've been pitching constantly. Through my entrepreneurial work, university projects, and job interviews, I've spent a lot of time writing scripts and trying to shape them to generate very specific feelings in the listener.`,
-              `Naturally, I started using LLMs to help me refine those pitches. They were useful for structure and clarity, but something always felt off. Even when the wording was technically correct, the output often felt "artificial" (ironic — I know). It lacked real emotion. Over time, I even developed a sense for it. You can tell when something is AI-generated.`,
+              `Naturally, I started using LLMs to help me refine those pitches. They were useful for structure and clarity, but something always felt off. Even when the wording was technically correct, the output often felt "artificial" (ironic — I know). Over time, I even developed a sense for it. I can usually tell when something is AI-generated.`,
               `My conclusion is that LLMs are good at producing convincing language, but much weaker at understanding how language actually creates emotional and cognitive responses in a listener.`,
               `That is where the idea started: What if we could give AI a "human brain" and a reward mechanism, so that it doesn't just optimize a pitch for how it reads, but for how it is experienced?`,
             ].map((text, i) => (
